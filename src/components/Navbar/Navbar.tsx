@@ -25,7 +25,7 @@ function Navbar() {
                 >
                     <img
                         src={logo}
-                        alt="DFIVE Technologies"
+                        alt="DFIVE Technologies logo"
                         className="brand-logo"
                     />
                 </a>
