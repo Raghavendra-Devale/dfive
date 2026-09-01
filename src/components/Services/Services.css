@@ -1,0 +1,251 @@
+.services {
+    background-color: var(--color-background);
+}
+
+
+/* ========================================
+   Header
+   ======================================== */
+
+.services-header {
+    max-width: 800px;
+
+    margin: 0 auto var(--space-12);
+
+    text-align: center;
+}
+
+.services-title {
+    margin: 0 0 var(--space-6);
+
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+
+    letter-spacing: -0.035em;
+}
+
+.services-subtitle {
+    max-width: 680px;
+
+    margin: 0 auto;
+
+    font-size: 1.1rem;
+    line-height: 1.75;
+}
+
+
+/* ========================================
+   Services Grid
+   ======================================== */
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: var(--space-6);
+}
+
+
+/* ========================================
+   Service Card
+   ======================================== */
+
+.service-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 300px;
+
+    padding: var(--space-8);
+
+    background-color: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+
+    overflow: hidden;
+
+    transition:
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast),
+        border-color var(--transition-fast);
+}
+
+.service-card::after {
+    content: '';
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -100px;
+    bottom: -100px;
+
+    background-color: var(--color-primary-light);
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    transition: opacity var(--transition-normal);
+
+    pointer-events: none;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+
+    border-color: var(--color-primary-light);
+
+    box-shadow: var(--shadow-md);
+}
+
+.service-card:hover::after {
+    opacity: 1;
+}
+
+
+/* ========================================
+   Card Top
+   ======================================== */
+
+.service-card-top {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: var(--space-8);
+}
+
+.service-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    color: var(--color-primary);
+
+    background-color: var(--color-primary-light);
+
+    border-radius: var(--radius-md);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.service-arrow {
+    color: var(--color-text-muted);
+
+    font-size: 1.4rem;
+
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.service-card:hover .service-arrow {
+    color: var(--color-primary);
+
+    transform: translate(3px, -3px);
+}
+
+
+/* ========================================
+   Card Content
+   ======================================== */
+
+.service-card h3 {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 0 var(--space-3);
+
+    color: var(--color-text-heading);
+
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.service-card>p {
+    position: relative;
+    z-index: 1;
+
+    margin: 0;
+
+    color: var(--color-text-muted);
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   Highlights
+   ======================================== */
+
+.service-highlights {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: var(--space-2);
+
+    margin: auto 0 0;
+    padding: var(--space-6) 0 0;
+
+    list-style: none;
+}
+
+.service-highlights li {
+    padding: 6px 10px;
+
+    color: var(--color-text-muted);
+
+    background-color: var(--color-background);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        min-height: 280px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .services-subtitle {
+        font-size: 1rem;
+    }
+
+    .service-card {
+        padding: var(--space-6);
+    }
+
+    .service-card-top {
+        margin-bottom: var(--space-6);
+    }
+}
