@@ -10,7 +10,7 @@ function Hero() {
                     <div className="hero-content">
 
                         <div className="section-eyebrow">
-                            TECHNOLOGY • ENGINEERING • INNOVATION
+                            TECHNOLOGY • ENGINEERING • INNOVATION...
                         </div>
 
                         <h1 className="hero-title">
